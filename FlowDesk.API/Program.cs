@@ -27,7 +27,13 @@ builder.Host.UseSerilog();
 
 // Database
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+{
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    if (builder.Environment.IsDevelopment())
+        options.UseSqlite(connectionString);
+    else
+        options.UseNpgsql(connectionString);
+});
 
 // Identity
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
