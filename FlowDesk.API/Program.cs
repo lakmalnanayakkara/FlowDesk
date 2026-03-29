@@ -1,3 +1,4 @@
+using System.Text;
 using FlowDesk.API.Mappings;
 using FlowDesk.API.Middleware;
 using FlowDesk.API.Services;
@@ -11,7 +12,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,32 +27,7 @@ builder.Host.UseSerilog();
 
 // Database
 builder.Services.AddDbContext<AppDbContext>(options =>
-{
-    if (builder.Environment.IsDevelopment())
-    {
-        var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-        options.UseSqlite(connectionString);
-    }
-    else
-    {
-        // Railway provides DATABASE_URL in postgresql:// format
-        // Convert it to Npgsql format
-        var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL")
-            ?? builder.Configuration.GetConnectionString("DefaultConnection");
-
-        if (databaseUrl!.StartsWith("postgresql://") || databaseUrl.StartsWith("postgres://"))
-        {
-            var uri = new Uri(databaseUrl);
-            var userInfo = uri.UserInfo.Split(':');
-            var npgsqlConnection = $"Host={uri.Host};Port={uri.Port};Database={uri.AbsolutePath.TrimStart('/')};Username={userInfo[0]};Password={userInfo[1]};SSL Mode=Require;Trust Server Certificate=true";
-            options.UseNpgsql(npgsqlConnection);
-        }
-        else
-        {
-            options.UseNpgsql(databaseUrl);
-        }
-    }
-});
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Identity
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
