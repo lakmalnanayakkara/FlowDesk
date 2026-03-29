@@ -17,7 +17,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FlowDesk.API\FlowDesk.API.csproj" />
+    <ProjectReference Include="..\FlowDesk.Core\FlowDesk.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Integration\" />
+    <Folder Include="Unit\" />
   </ItemGroup>
 
 </Project>

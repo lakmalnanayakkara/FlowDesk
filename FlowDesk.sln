@@ -3,7 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36915.13 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowDesk.API", "FlowDesk.API\FlowDesk.API.csproj", "{F8B28CBF-0BD0-4771-A1A4-FAD53B3036C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowDesk.Core", "FlowDesk.Core\FlowDesk.Core.csproj", "{DB55B2F8-9B92-4590-92F1-AE1249A3E583}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowDesk.Infrastructure", "FlowDesk.Infrastructure\FlowDesk.Infrastructure.csproj", "{D04DFD9F-AADE-41DF-9240-F8C962503CDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowDesk.Tests", "FlowDesk.Tests\FlowDesk.Tests.csproj", "{8C76606E-A8F4-41DC-A906-2549E68FACB5}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8B28CBF-0BD0-4771-A1A4-FAD53B3036C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8B28CBF-0BD0-4771-A1A4-FAD53B3036C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8B28CBF-0BD0-4771-A1A4-FAD53B3036C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8B28CBF-0BD0-4771-A1A4-FAD53B3036C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB55B2F8-9B92-4590-92F1-AE1249A3E583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB55B2F8-9B92-4590-92F1-AE1249A3E583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB55B2F8-9B92-4590-92F1-AE1249A3E583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB55B2F8-9B92-4590-92F1-AE1249A3E583}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D04DFD9F-AADE-41DF-9240-F8C962503CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D04DFD9F-AADE-41DF-9240-F8C962503CDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D04DFD9F-AADE-41DF-9240-F8C962503CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D04DFD9F-AADE-41DF-9240-F8C962503CDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C76606E-A8F4-41DC-A906-2549E68FACB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C76606E-A8F4-41DC-A906-2549E68FACB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C76606E-A8F4-41DC-A906-2549E68FACB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C76606E-A8F4-41DC-A906-2549E68FACB5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
