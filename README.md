@@ -17,14 +17,10 @@ A lightweight REST API for managing tasks within projects, built with ASP.NET Co
 
 1. Clone the repo and navigate into it
 2. `cd FlowDesk.API && dotnet run`
-3. Open https://localhost:5001/swagger
-4. Register: POST /api/auth/register
-5. Login: POST /api/auth/login — copy the token
-6. Click "Authorize" in Swagger, enter: Bearer {token}
+3. Register: POST /api/auth/register
+4. Login: POST /api/auth/login — copy the token
+5. Click "Authorize" in Swagger, enter: Bearer {token}
 
-## Seeded Admin Account
-- Email: admin@flowdesk.com
-- Password: Admin@123
 
 ## Key Design Decisions
 - **Clean Architecture**: Core → Infrastructure → API layers with no upward dependencies
